@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "a727f878-a62a-47a9-b281-7e6f9a427f5a",
+		"name": "Farmacia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Cadastrar Categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\" : \"Medicamentos\",\n    \"marca\" : \"Apsen\",\n    \"fabricante\" : \"APSEN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todas categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Categoria por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categoria/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar categoria por marca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categoria/marca/apsen",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"marca",
+								"apsen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar categoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 3,\n    \"nome\": \"Medicamentos\",\n    \"marca\": \"Abbott\",\n    \"fabricante\": \"Abbott\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categoria/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categoria/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Cadastrar Produtos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\" : \"Dorilax DT Paracetamol 450mg + Cafeína Anidra 50mg + Citrato de Orfenadrina 35mg 12 comprimidos\",\n    \"descricao\" : \"Este medicamento é indicado no alívio da dor associada a contraturas musculares, incluindo dor de cabeça tensional.\",\n    \"preco\" : \"9.00\",\n    \"quantidade\" : 100,\n    \"foto\" : \"https://img.drogasil.com.br/catalog/product/d/o/dorilax-dt-com-12-comprimidos-7896658026546.jpg?width=450&height=450&quality=85&type=resize\",\n    \"categoria\" : {\n        \"id\" : 1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todos produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Produtos por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/produtos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar produtos por nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/produtos/nome/Dorilax",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"nome",
+								"Dorilax"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar produtos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 4,\n    \"nome\": \"Dorilax\",\n    \"descricao\": \"Este medicamento é indicado no alívio da dor associada a contraturas musculares, incluindo dor de cabeça tensional.\",\n    \"preco\": \"9.00\",\n    \"quantidade\": 100,\n    \"foto\": \"https://img.drogasil.com.br/catalog/product/d/o/dorilax-dt-com-12-comprimidos-7896658026546.jpg?width=450&height=450&quality=85&type=resize\",\n    \"categoria\": {\n        \"id\": 1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/produtos/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar produtos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produtos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
